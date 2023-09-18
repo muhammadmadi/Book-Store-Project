@@ -1,0 +1,5 @@
+{
+    "git.fetchOnPull": true,
+    "git.verboseCommit": true,
+    "search.useGlobalIgnoreFiles": false
+}
