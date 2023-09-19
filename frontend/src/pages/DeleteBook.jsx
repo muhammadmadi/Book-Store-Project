@@ -2,7 +2,7 @@ import React from 'react'
 
 const DeleteBook = () => {
   return (
-    <div>DeleteBooks</div>
+    <div>DeleteBook</div>
   )
 }
 

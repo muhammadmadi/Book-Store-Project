@@ -1,12 +1,12 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const bookScheme = mongoose.Schema(
+const bookSchema = mongoose.Schema(
   {
     title: {
       type: String,
       required: true,
     },
-    auther: {
+    author: {
       type: String,
       required: true,
     },
@@ -15,9 +15,9 @@ const bookScheme = mongoose.Schema(
       required: true,
     },
   },
-  { timesamps: true 
+  {
+    timestamps: true,
   }
 );
 
-export const Book = mongoose.model("book",bookScheme);
-
+export const Book = mongoose.model('Book', bookSchema);
