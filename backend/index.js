@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
 
+
 const app = express();
 
 // Middleware for parsing request body
@@ -30,8 +31,8 @@ app.use('/books', booksRoute);
 
 mongoose
   .connect(mongoDBURL)
-  .then(() => {
-    console.log('App connected to database');
+  .then((res) => {
+    console.log('App connected to database : '+ `\n`+ res);
     app.listen(PORT, () => {
       console.log(`App is listening to port: ${PORT}`);
     });
