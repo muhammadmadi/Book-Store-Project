@@ -4,15 +4,17 @@ import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 
+const geturl = import.meta.env.VITE_API_URL;
+
 const ShowBook = () => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
-
+console.log( geturl + id);
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`${geturl}/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);

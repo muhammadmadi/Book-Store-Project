@@ -5,6 +5,9 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
+const geturl = import.meta.env.VITE_API_URL;
+
+
 const DeleteBook = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -14,7 +17,7 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5555/books/${id}`)
+      .delete(`${geturl}/books/${id}`)
       .then((res) => {
         setLoading(false);
         enqueueSnackbar('Book Deleted successfully : ' + res.data.message, { variant: 'success' });
